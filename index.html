@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Heath’s Doggo Shop - Customizable Purchases 🐶</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #222;
+      margin: 0; padding: 0;
+    }
+    header {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      font-weight: 900;
+      box-shadow: 0 5px 15px rgba(255, 111, 97, 0.5);
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .product {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      object-fit: cover;
+      height: 180px;
+    }
+    .product h2 {
+      color: #ff6f61;
+      margin-bottom: 12px;
+    }
+    .product p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 20px;
+      min-height: 48px;
+    }
+    label {
+      font-weight: 600;
+      margin-right: 8px;
+    }
+    select {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      font-size: 1em;
+      width: 100%;
+    }
+    .buy-btn {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+      width: 100%;
+    }
+    .buy-btn:hover {
+      background-color: #e35447;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>Heath’s Doggo Shop - Customize Your Order!</header>
+
+<main>
+  <section class="products">
+
+    <!-- Product 1 -->
+    <article class="product" data-product="Chewy Toy">
+      <img src="https://placedog.net/400/300?id=101" alt="Chewy Toy" />
+      <h2>Chewy Toy</h2>
+      <p>Ultra-durable chew toy your doggo will love.</p>
+
+      <label for="size1">Size:</label>
+      <select id="size1" class="size-select" data-product="Chewy Toy">
+        <option value="Small" data-price="10">Small ($10)</option>
+        <option value="Medium" data-price="15" selected>Medium ($15)</option>
+        <option value="Large" data-price="20">Large ($20)</option>
+      </select>
+
+      <label for="color1">Color:</label>
+      <select id="color1" class="color-select" data-product="Chewy Toy">
+        <option value="Red">Red</option>
+        <option value="Blue" selected>Blue</option>
+        <option value="Green">Green</option>
+      </select>
+
+      <button class="buy-btn" data-product="Chewy Toy" data-price="15">Buy Now</button>
+    </article>
+
+    <!-- Product 2 -->
+    <article class="product" data-product="Stylish Collar">
+      <img src="https://placedog.net/400/300?id=102" alt="Stylish Collar" />
+      <h2>Stylish Collar</h2>
+      <p>Comfy, stylish collar for the trendiest pups.</p>
+
+      <label for="size2">Size:</label>
+      <select id="size2" class="size-select" data-product="Stylish Collar">
+        <option value="Small" data-price="20" selected>Small ($20)</option>
+        <option value="Medium" data-price="25">Medium ($25)</option>
+        <option value="Large" data-price="30">Large ($30)</option>
+      </select>
+
+      <label for="color2">Color:</label>
+      <select id="color2" class="color-select" data-product="Stylish Collar">
+        <option value="Black" selected>Black</option>
+        <option value="Brown">Brown</option>
+        <option value="Pink">Pink</option>
+      </select>
+
+      <button class="buy-btn" data-product="Stylish Collar" data-price="20">Buy Now</button>
+    </article>
+
+    <!-- Product 3 -->
+    <article class="product" data-product="Fresh Shampoo">
+      <img src="https://placedog.net/400/300?id=103" alt="Fresh Shampoo" />
+      <h2>Fresh Shampoo</h2>
+      <p>Gentle shampoo for shiny, fresh fur.</p>
+
+      <label for="size3">Size:</label>
+      <select id="size3" class="size-select" data-product="Fresh Shampoo">
+        <option value="250ml" data-price="8">250ml ($8)</option>
+        <option value="500ml" data-price="12" selected>500ml ($12)</option>
+        <option value="1L" data-price="20">1L ($20)</option>
+      </select>
+
+      <label for="color3">Fragrance:</label>
+      <select id="color3" class="color-select" data-product="Fresh Shampoo">
+        <option value="Lavender" selected>Lavender</option>
+        <option value="Cedarwood">Cedarwood</option>
+        <option value="Vanilla">Vanilla</option>
+      </select>
+
+      <button class="buy-btn" data-product="Fresh Shampoo" data-price="12">Buy Now</button>
+    </article>
+
+  </section>
+</main>
+
+<script>
+  // PayPal email goes here (your real PayPal email)
+  const paypalEmail = "YOUR_PAYPAL_EMAIL@example.com";
+
+  // When buy button clicked, build PayPal link and open it
+  document.querySelectorAll('.buy-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const productName = button.getAttribute('data-product');
+      const productCard = button.closest('.product');
+      const sizeSelect = productCard.querySelector('.size-select');
+      const colorSelect = productCard.querySelector('.color-select');
+      const size = sizeSelect.value;
+      const color = colorSelect.value;
+
+      // Get selected size price
+      const sizeOption = sizeSelect.options[sizeSelect.selectedIndex];
+      const price = sizeOption.getAttribute('data-price');
+
+      // Build PayPal link
+      const baseUrl = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick';
+      const params = new URLSearchParams({
+        business: paypalEmail,
+        item_name: `${productName} - Size: ${size}, Color: ${color}`,
+        amount: price,
+        currency_code: 'USD',
+      });
+      const paypalUrl = `${baseUrl}&${params.toString()}`;
+
+      // Open PayPal in new tab
+      window.open(paypalUrl, '_blank');
+    });
+  });
+</script>
+
+</body>
+</html>
